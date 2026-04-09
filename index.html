@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор промптов — Nano Banana для ТСТ-Нива</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Nano Banana <span>Промпт-генератор</span></h1>
+            <p>Автосервис ТСТ-Нива — брутальные баннеры без целых машин</p>
+        </div>
+
+        <div class="form-group">
+            <label>Выберите формат баннера:</label>
+            <div class="format-buttons">
+                <button class="format-btn active" data-format="650x650">650×650 (квадрат)</button>
+                <button class="format-btn" data-format="900x480">900×480 (горизонт)</button>
+                <button class="format-btn" data-format="240x400">240×400 (Яндекс)</button>
+                <button class="format-btn" data-format="400x160">400×160 (широкий)</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Текст на баннере (основной):</label>
+            <input type="text" id="mainText" placeholder="Например: ЗАМЕНА РАДИАТОРА" value="ЗАМЕНА РАДИАТОРА">
+        </div>
+
+        <div class="form-group">
+            <label>Текст на баннере (подзаголовок):</label>
+            <input type="text" id="subText" placeholder="Например: в автосервисе ТСТ-НИВА" value="в автосервисе ТСТ-НИВА">
+        </div>
+
+        <div class="form-group">
+            <label>Дополнительные пожелания (опционально):</label>
+            <textarea id="customNotes" rows="3" placeholder="Например: добавить больше жёлтых акцентов, убрать руки механика и т.д."></textarea>
+        </div>
+
+        <div class="button-group">
+            <button id="copyBtn" class="btn btn-primary">📋 Копировать промпт</button>
+            <button id="downloadBtn" class="btn btn-secondary">💾 Скачать .txt промпт</button>
+            <button id="resetBtn" class="btn btn-danger">🗑️ Сбросить</button>
+        </div>
+
+        <div class="prompt-container">
+            <label>Сгенерированный промпт:</label>
+            <div id="promptOutput" class="prompt-output"></div>
+        </div>
+
+        <div class="info">
+            <p>⚠️ Баннеры для Яндекс.Карт (240×400) — текст только по центру, верх/низ по 50px пустые</p>
+            <p>🎨 Фирменные цвета: <span style="background:#64B5F6; padding:2px 8px;">#64B5F6</span> + <span style="background:#FFFF00; padding:2px 8px;">#FFFF00</span></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
